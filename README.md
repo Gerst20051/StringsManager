@@ -1,0 +1,2 @@
+# StringsManager
+Strings Manager
