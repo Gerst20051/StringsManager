@@ -137,6 +137,10 @@ BASH
 
 Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
+### Run Tests
+
+[$]> `npm test` => `react-scripts test`
+
 ### Build & Deploy Production
 
 [$]> `npm run build` => `PUBLIC_URL=http://hnswave.co/strings-manager/ react-scripts build`
