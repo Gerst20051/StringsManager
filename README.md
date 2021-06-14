@@ -60,6 +60,14 @@ https://github.com/facebook/create-react-app
 
 [$]> `sed -i '' 's/react-scripts start/PORT=4000 react-scripts start/' react-strings-manager/package.json`
 
+#### Update NPM Build Command
+
+[$]> `sed -i '' 's#react-scripts build#PUBLIC_URL=http://hnswave.co/strings-manager/ react-scripts build#' react-strings-manager/package.json`
+
+#### Add NPM Deploy Command
+
+[$]> `(FILE='react-strings-manager/package.json'; jq '.scripts.deploy = "rsync -r -a -v -e ssh --delete build/ droplet:/root/www/strings-manager"' $FILE | sponge $FILE)`
+
 #### Update Public Logos
 
 [$]> `./create_logos.sh`
@@ -110,3 +118,9 @@ BASH
 [$]> `npm start` => `PORT=4000 react-scripts start`
 
 Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+
+### Build & Deploy Production
+
+[$]> `npm run build` => `PUBLIC_URL=http://hnswave.co/strings-manager/ react-scripts build`
+
+[$]> `npm run deploy` => `rsync -r -a -v -e ssh --delete build/ droplet:/root/www/strings-manager`
