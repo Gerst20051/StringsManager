@@ -9,9 +9,10 @@
   },
   "scripts": {
     "deploy": "sls deploy",
-    "start": "sls invoke local -f app -d '{ \"path\": \"/request\" }'"
+    "start": "sls offline start"
   },
   "devDependencies": {
-    "serverless": "^2.46.0"
+    "serverless": "^2.46.0",
+    "serverless-offline": "^7.0.0"
   }
 }

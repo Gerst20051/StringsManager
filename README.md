@@ -58,7 +58,8 @@ cat << JSON > strings-manager/package.json
     "start": "sls invoke local -f app -d '{ \"path\": \"/request\" }'"
   },
   "devDependencies": {
-    "serverless": "^$(npm show serverless version)"
+    "serverless": "^$(npm show serverless version)",
+    "serverless-offline": "^$(npm show serverless-offline version)"
   }
 }
 JSON
@@ -146,3 +147,9 @@ Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 [$]> `npm run build` => `PUBLIC_URL=http://hnswave.co/strings-manager/ react-scripts build`
 
 [$]> `npm run deploy` => `rsync -r -a -v -e ssh --delete build/ droplet:/root/www/strings-manager`
+
+### Swagger API Documentation
+
+Open [http://localhost:4000/?swagger](http://localhost:4000/?swagger) to view it in the browser.
+
+Open [http://hnswave.co/strings-manager/?swagger](http://hnswave.co/strings-manager/?swagger) to view it in the browser.
