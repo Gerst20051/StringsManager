@@ -1,8 +1,11 @@
 import { Fragment } from 'react';
 
-export default function AddressManager(props) {
+import Header from './Header';
+
+export default function StringsManager(props) {
   return (
     <Fragment>
+      <Header text="Strings Manager" />
     </Fragment>
   );
 }
