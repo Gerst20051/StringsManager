@@ -33,7 +33,12 @@ https://github.com/serverless/serverless
 
 #### Init Gitignore File
 
-[$]> `echo 'node_modules' > strings-manager/.gitignore`
+```bash
+cat << GITIGNORE > strings-manager/.gitignore
+.serverless
+node_modules
+GITIGNORE
+```
 
 #### Init Package JSON File
 
@@ -43,6 +48,15 @@ cat << JSON > strings-manager/package.json
   "name": "strings-manager",
   "version": "0.1.0",
   "private": true,
+  "dependencies": {
+    "cors": "^$(npm show cors version)",
+    "express": "^$(npm show express version)",
+    "serverless-http": "^$(npm show serverless-http version)"
+  },
+  "scripts": {
+    "deploy": "sls deploy",
+    "start": "sls invoke local -f app -d '{ \"path\": \"/request\" }'"
+  },
   "devDependencies": {
     "serverless": "^$(npm show serverless version)"
   }
@@ -101,7 +115,11 @@ BASH
 
 ### Invoke Lambda (Locally)
 
-[$]> `./node_modules/.bin/serverless invoke local -f hello`
+[$]> `npm start` => `sls invoke local -f app -d '{ "path": "/request" }'`
+
+### Deploy Lambda To AWS
+
+[$]> `npm run deploy` => `sls deploy`
 
 ## Frontend Instructions
 

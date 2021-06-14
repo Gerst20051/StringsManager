@@ -1,0 +1,16 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the api documentation for the strings manager.",
+    "version": "1.0.0",
+    "title": "Strings Manager"
+  },
+  "host": "hnswave.co",
+  "basePath": "/strings-manager",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "paths": {},
+  "definitions": {}
+}

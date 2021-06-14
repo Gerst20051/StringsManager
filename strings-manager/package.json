@@ -2,6 +2,15 @@
   "name": "strings-manager",
   "version": "0.1.0",
   "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  },
+  "scripts": {
+    "deploy": "sls deploy",
+    "start": "sls invoke local -f app -d '{ \"path\": \"/request\" }'"
+  },
   "devDependencies": {
     "serverless": "^2.46.0"
   }
